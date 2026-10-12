@@ -34,6 +34,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: '1EKCO0vfh97iivAwsCmgvwiubupXBqrCSwai59fUpo4',
+  },
 }
 
 const cx = (...classes) => classes.filter(Boolean).join(' ')
