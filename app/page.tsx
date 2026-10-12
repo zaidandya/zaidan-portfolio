@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import { BlogPosts } from 'app/components/posts'
+
+export const metadata: Metadata = {
+  verification: {
+    google: '1EKCO0vfh97iivAwsCmgvwiubupXBqrCSwai59fUpo4', 
+  },
+}
 
 export default function Page() {
   return (
