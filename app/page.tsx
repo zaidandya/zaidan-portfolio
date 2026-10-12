@@ -7,7 +7,7 @@ export default function Page() {
         Zaidan Dhiyaurrahman
       </h1>
       <p className="mb-4">
-        {`I'm a 3rd semester Information System & Technology student at Bandung Institute of Technology. I'm interested in software engineering`}
+        {`I'm a 3rd semester Information System & Technology student at Institut Teknologi Bandung. I'm interested in software engineering`}
       </p>
     </section>
   )
