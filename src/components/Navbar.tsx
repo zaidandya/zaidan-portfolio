@@ -25,7 +25,7 @@ export function Navbar({
   const [mobileExpanded, setMobileExpanded] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const shouldReduceMotion = useReducedMotion();
-  const islandRef = useRef<HTMLDivElement | null>(null);
+  const islandRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -77,31 +77,26 @@ export function Navbar({
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-3 z-40 flex justify-center px-3 sm:top-4 sm:px-6">
-      <motion.nav
+      <nav
         ref={islandRef}
         aria-label="Primary navigation"
-        layout
-        transition={springTransition}
-        className={`pointer-events-auto w-full border border-white/14 bg-[#09090C]/88 backdrop-blur-xl shadow-[0_14px_40px_rgba(0,0,0,0.72)] transition-[max-width,border-color] duration-200 ${
+        className={`pointer-events-auto w-full border border-[#26262B] bg-[#0B0B0D] shadow-[0_14px_36px_rgba(0,0,0,0.85)] transition-[max-width,border-radius,border-color] duration-200 ${
           mobileExpanded
-            ? 'max-w-md rounded-[28px] border-white/20 md:max-w-[520px] md:rounded-full'
+            ? 'max-w-md rounded-[28px] border-[#34343B] md:max-w-[520px] md:rounded-full'
             : isScrolled
               ? 'max-w-[calc(100vw-24px)] rounded-full sm:max-w-[420px] md:max-w-[480px]'
               : 'max-w-[calc(100vw-24px)] rounded-full sm:max-w-[460px] md:max-w-[520px]'
         }`}
       >
-        {/* Top Dynamic Island Bar (zero icons, zero SVG logos, zero user name) */}
         <div
           className={`flex items-center justify-between gap-3 px-4 transition-[height,padding] duration-200 sm:px-5 ${
             isScrolled ? 'h-12 md:h-[52px]' : 'h-[50px] md:h-14'
           }`}
         >
-          {/* Mobile Active Page Label */}
-          <span className="truncate text-sm font-medium text-zinc-100 md:hidden">
+          <span className="truncate text-sm font-medium text-[#F2F2F0] md:hidden">
             {activeLabel}
           </span>
 
-          {/* Desktop Route Tabs */}
           <div className="hidden md:flex items-center gap-1">
             {NAV_ITEMS.map((item) => {
               const isActive = activeRoute === item.key;
@@ -111,30 +106,29 @@ export function Navbar({
                   href={item.href}
                   onClick={(e) => handleSelect(e, item.key)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`relative rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 ${
-                    isActive ? 'text-zinc-50' : 'text-zinc-400 hover:text-zinc-100'
+                  className={`relative isolate rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF] ${
+                    isActive ? 'text-[#0B0B0D]' : 'text-[#A1A1AA] hover:text-[#F2F2F0]'
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="dynamic-island-route-pill"
                       transition={springTransition}
-                      className="absolute inset-0 -z-10 rounded-full bg-white/12"
+                      className="absolute inset-0 z-0 rounded-full bg-[#EAE6DF]"
                     />
                   )}
-                  <span>{item.label}</span>
+                  <span className="relative z-10">{item.label}</span>
                 </a>
               );
             })}
           </div>
 
-          {/* Right: Text-Only Background Motion Toggle + Mobile Expand Trigger */}
           <div className="flex items-center gap-2 shrink-0">
             <button
               type="button"
               onClick={onTogglePlay}
               aria-pressed={isPlaying}
-              className="inline-flex min-h-[34px] items-center justify-center rounded-full bg-orange-500 px-4 py-1.5 text-xs font-semibold text-zinc-950 whitespace-nowrap shrink-0 transition-colors duration-150 hover:bg-orange-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-[#2C2C32] bg-[#16161A] px-4 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#4A4A54] hover:bg-[#1F1F24] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
             >
               {isPlaying ? 'Pause' : 'Play'}
             </button>
@@ -144,14 +138,13 @@ export function Navbar({
               onClick={() => setMobileExpanded((prev) => !prev)}
               aria-expanded={mobileExpanded}
               aria-label={mobileExpanded ? 'Collapse navigation island' : 'Expand navigation island'}
-              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-white/14 bg-white/[0.06] px-3.5 py-1.5 text-xs font-medium text-zinc-100 whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-white/25 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500 md:hidden"
+              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-[#2C2C32] bg-[#16161A] px-3.5 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#4A4A54] hover:bg-[#1F1F24] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF] md:hidden"
             >
               {mobileExpanded ? 'Close' : 'Menu'}
             </button>
           </div>
         </div>
 
-        {/* Expanded Dynamic Island Drawer for Mobile & Small Tablets */}
         <AnimatePresence initial={false}>
           {mobileExpanded && (
             <motion.div
@@ -159,7 +152,7 @@ export function Navbar({
               animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, height: 'auto' }}
               exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, height: 0 }}
               transition={springTransition}
-              className="overflow-hidden border-t border-white/10 md:hidden"
+              className="overflow-hidden border-t border-[#222227] md:hidden"
             >
               <div className="flex flex-col gap-1 px-3 py-3">
                 {NAV_ITEMS.map((item) => {
@@ -172,13 +165,13 @@ export function Navbar({
                       aria-current={isActive ? 'page' : undefined}
                       className={`flex min-h-[44px] items-center justify-between rounded-2xl px-4 text-sm font-medium transition-colors duration-150 ${
                         isActive
-                          ? 'bg-white/10 text-zinc-50'
-                          : 'text-zinc-300 hover:bg-white/[0.06] hover:text-white'
+                          ? 'bg-[#EAE6DF] text-[#0B0B0D]'
+                          : 'text-[#D4D4D8] hover:bg-[#17171C] hover:text-[#F2F2F0]'
                       }`}
                     >
                       <span>{item.label}</span>
                       {isActive && (
-                        <span className="text-xs text-orange-400">Active</span>
+                        <span className="text-xs text-[#3F3F46]">Active</span>
                       )}
                     </a>
                   );
@@ -187,7 +180,7 @@ export function Navbar({
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.nav>
+      </nav>
     </header>
   );
 }

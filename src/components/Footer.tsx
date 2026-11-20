@@ -133,14 +133,14 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
           <button
             type="button"
             onClick={handleCopyEmail}
-            className="underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-zinc-100 hover:decoration-orange-400"
+            className="underline decoration-[#52525B] underline-offset-4 transition-colors hover:text-[#F2F2F0] hover:decoration-[#EAE6DF]"
           >
             {copiedEmail ? `Copied ${SITE_PROFILE.email}` : SITE_PROFILE.email}
           </button>
 
           <a
             href="#top"
-            className="underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-zinc-100 hover:decoration-orange-400"
+            className="underline decoration-[#52525B] underline-offset-4 transition-colors hover:text-[#F2F2F0] hover:decoration-[#EAE6DF]"
           >
             Back to Top
           </a>
