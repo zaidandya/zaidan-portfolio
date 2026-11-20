@@ -40,7 +40,7 @@ export function PageViews({
         aria-label="Home"
         className="mx-auto flex min-h-[calc(100vh-14rem)] w-full max-w-[1100px] flex-col justify-center px-6 pt-28 pb-16 sm:pt-32"
       >
-        <div className="max-w-2xl rounded-xl border border-[#232328] bg-[#08080A]/92 p-7 sm:p-9">
+        <div className="max-w-2xl rounded-xl border border-[#27272A] bg-[#050505]/92 p-7 sm:p-9">
           <h1
             className="text-[clamp(2.25rem,4.6vw,3.65rem)] font-semibold leading-[1.08] tracking-tight text-[#F5F4F0]"
             style={{ textWrap: 'balance' }}
@@ -56,17 +56,17 @@ export function PageViews({
             <button
               type="button"
               onClick={() => onNavigate('blog')}
-              className="inline-flex min-h-[42px] items-center rounded-lg bg-[#EAE6DF] px-4 py-2 text-sm font-semibold text-[#0A0A0C] whitespace-nowrap shrink-0 transition-colors duration-150 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
+              className="inline-flex min-h-[42px] items-center rounded-lg bg-[#EAE6DF] px-4 py-2 text-sm font-semibold text-[#050505] whitespace-nowrap shrink-0 transition-colors duration-150 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
             >
-              Read Blog
+              Blog
             </button>
 
             <button
               type="button"
               onClick={() => onNavigate('skills')}
-              className="inline-flex min-h-[42px] items-center rounded-lg border border-[#2A2A30] bg-[#121216] px-4 py-2 text-sm font-medium text-[#E4E4E7] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#4A4A54] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
+              className="inline-flex min-h-[42px] items-center rounded-lg border border-[#27272A] bg-[#050505] px-4 py-2 text-sm font-medium text-[#E4E4E7] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#52525B] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
             >
-              Explore Skills
+              Skills
             </button>
 
             <button
@@ -78,7 +78,7 @@ export function PageViews({
             </button>
           </div>
 
-          <div className="mt-8 border-t border-[#222227] pt-5">
+          <div className="mt-8 border-t border-[#27272A] pt-5">
             <h2 className="text-xs font-medium text-[#A1A1AA]">Latest Writing</h2>
             <div className="mt-3 space-y-2.5">
               {BLOG_POSTS.map((post) => (
@@ -86,7 +86,7 @@ export function PageViews({
                   key={post.slug}
                   type="button"
                   onClick={() => onNavigate('blog', post.slug)}
-                  className="group flex w-full flex-col gap-1 rounded-lg px-2 py-1.5 text-left transition-colors hover:bg-[#141418] sm:flex-row sm:items-center sm:gap-4"
+                  className="group flex w-full flex-col gap-1 rounded-lg px-2 py-1.5 text-left transition-colors hover:bg-[#0E0E10] sm:flex-row sm:items-center sm:gap-4"
                 >
                   <span className="text-xs tabular-nums text-[#A1A1AA] sm:w-32 shrink-0">
                     {post.date}
@@ -110,7 +110,7 @@ export function PageViews({
         className="mx-auto min-h-[calc(100vh-14rem)] w-full max-w-[900px] px-6 pt-28 pb-16 sm:pt-32"
       >
         {selectedPost ? (
-          <article className="rounded-xl border border-[#232328] bg-[#08080A]/94 p-7 sm:p-10">
+          <article className="rounded-xl border border-[#27272A] bg-[#050505]/94 p-7 sm:p-10">
             <button
               type="button"
               onClick={() => onNavigate('blog', null)}
@@ -119,8 +119,8 @@ export function PageViews({
               Back to My Blog
             </button>
 
-            <header className="mt-6 border-b border-[#222227] pb-6">
-              <p className="text-xs tabular-nums text-[#C9C3B8]">
+            <header className="mt-6 border-b border-[#27272A] pb-6">
+              <p className="text-xs tabular-nums text-[#A1A1AA]">
                 {selectedPost.date}
               </p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
@@ -132,15 +132,15 @@ export function PageViews({
             </header>
 
             {selectedPost.codeBlock && (
-              <div className="mt-7 overflow-hidden rounded-xl border border-[#232328] bg-[#050507]">
-                <div className="flex items-center justify-between border-b border-[#222227] px-4 py-3 text-xs">
+              <div className="mt-7 overflow-hidden rounded-xl border border-[#27272A] bg-[#050505]">
+                <div className="flex items-center justify-between border-b border-[#27272A] px-4 py-3 text-xs">
                   <span className="text-[#D4D4D8]">
                     {selectedPost.codeBlock.filename} · {selectedPost.codeBlock.language}
                   </span>
                   <button
                     type="button"
                     onClick={() => handleCopyCode(selectedPost.codeBlock!.code)}
-                    className="inline-flex min-h-[32px] items-center rounded-md border border-[#2C2C32] bg-[#141418] px-3 py-1 text-xs font-medium text-[#E4E4E7] transition-colors hover:border-[#4A4A54] hover:text-white"
+                    className="inline-flex min-h-[32px] items-center rounded-md border border-[#27272A] bg-[#050505] px-3 py-1 text-xs font-medium text-[#E4E4E7] transition-colors hover:border-[#52525B] hover:text-white"
                   >
                     {copiedCode ? 'Copied' : 'Copy'}
                   </button>
@@ -153,15 +153,12 @@ export function PageViews({
 
             {selectedPost.sections && (
               <div className="mt-7 space-y-6">
-                {selectedPost.sections.map((section, idx) => (
+                {selectedPost.sections.map((section) => (
                   <div
                     key={section.heading}
-                    className="border-b border-[#222227] pb-5 last:border-b-0 last:pb-0"
+                    className="border-b border-[#27272A] pb-5 last:border-b-0 last:pb-0"
                   >
                     <h2 className="text-xl font-semibold text-[#F2F2F0]">
-                      <span className="mr-2 text-sm tabular-nums text-[#C9C3B8]">
-                        0{idx + 1}.
-                      </span>
                       {section.heading}
                     </h2>
                     <p className="mt-2 text-base leading-relaxed text-[#D4D4D8]">
@@ -173,13 +170,12 @@ export function PageViews({
             )}
           </article>
         ) : (
-          <div className="rounded-xl border border-[#232328] bg-[#08080A]/92 p-7 sm:p-10">
-            <p className="text-xs font-medium text-[#C9C3B8]">Writing</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
+          <div className="rounded-xl border border-[#27272A] bg-[#050505]/92 p-7 sm:p-10">
+            <h1 className="text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
               My Blog
             </h1>
 
-            <div className="mt-8 divide-y divide-[#222227] border-t border-[#222227]">
+            <div className="mt-8 divide-y divide-[#27272A] border-t border-[#27272A]">
               {BLOG_POSTS.map((post) => (
                 <button
                   key={post.slug}
@@ -211,13 +207,12 @@ export function PageViews({
         aria-label="Skills"
         className="mx-auto min-h-[calc(100vh-14rem)] w-full max-w-[900px] px-6 pt-28 pb-16 sm:pt-32"
       >
-        <div className="rounded-xl border border-[#232328] bg-[#08080A]/92 p-7 sm:p-10">
-          <p className="text-xs font-medium text-[#C9C3B8]">Toolkit</p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
+        <div className="rounded-xl border border-[#27272A] bg-[#050505]/92 p-7 sm:p-10">
+          <h1 className="text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
             Skills
           </h1>
 
-          <div className="mt-8 divide-y divide-[#222227] border-t border-[#222227]">
+          <div className="mt-8 divide-y divide-[#27272A] border-t border-[#27272A]">
             {SKILL_GROUPS.map((group) => (
               <div
                 key={group.category}
@@ -245,13 +240,12 @@ export function PageViews({
       aria-label="Projects"
       className="mx-auto min-h-[calc(100vh-14rem)] w-full max-w-[900px] px-6 pt-28 pb-16 sm:pt-32"
     >
-      <div className="rounded-xl border border-[#232328] bg-[#08080A]/92 p-7 sm:p-10">
-        <p className="text-xs font-medium text-[#C9C3B8]">Selected Work</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
+      <div className="rounded-xl border border-[#27272A] bg-[#050505]/92 p-7 sm:p-10">
+        <h1 className="text-3xl font-semibold tracking-tight text-[#F5F4F0] sm:text-4xl">
           Projects
         </h1>
 
-        <div className="mt-8 border-t border-[#222227] pt-7">
+        <div className="mt-8 border-t border-[#27272A] pt-7">
           <p className="text-2xl font-semibold text-[#F2F2F0]">Coming soon.</p>
           <p className="mt-2 max-w-lg text-base leading-relaxed text-[#A1A1AA]">
             Currently documenting coursework and software engineering builds. Follow ongoing
@@ -262,7 +256,7 @@ export function PageViews({
             href="https://github.com/zaidandya"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex min-h-[40px] items-center rounded-lg border border-[#2A2A30] bg-[#121216] px-4 py-2 text-sm font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors hover:border-[#4A4A54] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
+            className="mt-6 inline-flex min-h-[40px] items-center rounded-lg border border-[#27272A] bg-[#050505] px-4 py-2 text-sm font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors hover:border-[#52525B] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
           >
             github.com/zaidandya
           </a>

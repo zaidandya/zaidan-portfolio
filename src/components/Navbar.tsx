@@ -80,9 +80,9 @@ export function Navbar({
       <nav
         ref={islandRef}
         aria-label="Primary navigation"
-        className={`pointer-events-auto w-full border border-[#26262B] bg-[#0B0B0D] shadow-[0_14px_36px_rgba(0,0,0,0.85)] transition-[max-width,border-radius,border-color] duration-200 ${
+        className={`pointer-events-auto w-full border border-[#27272A] bg-[#050505] transition-[max-width,border-radius,border-color] duration-200 ${
           mobileExpanded
-            ? 'max-w-md rounded-[28px] border-[#34343B] md:max-w-[520px] md:rounded-full'
+            ? 'max-w-md rounded-[28px] border-[#3F3F46] md:max-w-[520px] md:rounded-full'
             : isScrolled
               ? 'max-w-[calc(100vw-24px)] rounded-full sm:max-w-[420px] md:max-w-[480px]'
               : 'max-w-[calc(100vw-24px)] rounded-full sm:max-w-[460px] md:max-w-[520px]'
@@ -107,7 +107,7 @@ export function Navbar({
                   onClick={(e) => handleSelect(e, item.key)}
                   aria-current={isActive ? 'page' : undefined}
                   className={`relative isolate rounded-full px-3.5 py-1.5 text-sm font-medium whitespace-nowrap shrink-0 transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF] ${
-                    isActive ? 'text-[#0B0B0D]' : 'text-[#A1A1AA] hover:text-[#F2F2F0]'
+                    isActive ? 'text-[#050505]' : 'text-[#A1A1AA] hover:text-[#F2F2F0]'
                   }`}
                 >
                   {isActive && (
@@ -128,7 +128,7 @@ export function Navbar({
               type="button"
               onClick={onTogglePlay}
               aria-pressed={isPlaying}
-              className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-[#2C2C32] bg-[#16161A] px-4 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#4A4A54] hover:bg-[#1F1F24] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
+              className="inline-flex min-h-[34px] items-center justify-center rounded-full border border-[#27272A] bg-[#050505] px-4 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#52525B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF]"
             >
               {isPlaying ? 'Pause' : 'Play'}
             </button>
@@ -138,7 +138,7 @@ export function Navbar({
               onClick={() => setMobileExpanded((prev) => !prev)}
               aria-expanded={mobileExpanded}
               aria-label={mobileExpanded ? 'Collapse navigation island' : 'Expand navigation island'}
-              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-[#2C2C32] bg-[#16161A] px-3.5 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#4A4A54] hover:bg-[#1F1F24] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#EAE6DF] md:hidden"
+              className="inline-flex min-h-[36px] items-center justify-center rounded-full border border-[#27272A] bg-[#050505] px-3.5 py-1.5 text-xs font-medium text-[#F2F2F0] whitespace-nowrap shrink-0 transition-colors duration-150 hover:border-[#52525B] md:hidden"
             >
               {mobileExpanded ? 'Close' : 'Menu'}
             </button>

@@ -39,7 +39,7 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
   };
 
   return (
-    <footer className="relative z-10 flex min-h-[460px] flex-col justify-between overflow-hidden border-t border-white/10 bg-[#050505] lg:min-h-[540px]">
+    <footer className="relative z-10 flex min-h-[460px] flex-col justify-between overflow-hidden border-t border-[#27272A] bg-[#050505] lg:min-h-[540px]">
       {/* Goldfish ASCII video scoped strictly to the footer */}
       <div
         className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
@@ -53,9 +53,9 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
           muted
           playsInline
           preload="auto"
-          className="h-full w-full object-cover object-center opacity-90"
+          className="h-full w-full object-cover object-center opacity-85"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505]/25 to-[#050505]/85" />
+        <div className="absolute inset-0 bg-[#050505]/45" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6 pt-16 pb-10 sm:pt-20">
