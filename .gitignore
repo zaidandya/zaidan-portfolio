@@ -1,0 +1,10 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+.idea/
+.vercel/
+*.log
+.env*
+!.env.example
