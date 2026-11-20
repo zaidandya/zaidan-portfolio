@@ -5,7 +5,7 @@ interface AsciiBackgroundProps {
   objectFit?: 'cover' | 'contain';
 }
 
-const MAIN_VIDEO_SRC = '/assets/aistudio/devault-ascii-tiles-u-g0orqyuo_d242c892.mp4';
+const MAIN_VIDEO_SRC = '/assets/devault-ascii-tiles-u-g0orqyuo_d242c892.mp4';
 
 export function AsciiBackground({
   isPlaying,
@@ -21,7 +21,6 @@ export function AsciiBackground({
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Ignore autoplay restriction errors when muted playback is blocked
         });
       }
     } else {

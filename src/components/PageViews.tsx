@@ -30,7 +30,6 @@ export function PageViews({
       setCopiedCode(true);
       window.setTimeout(() => setCopiedCode(false), 1800);
     } catch {
-      // Clipboard API unavailable
     }
   };
 

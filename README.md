@@ -1,8 +1,8 @@
-# Zaidan Dhiyaurrahman — Portfolio
+# Zaidan Dhiyaurrahman Portfolio Website
 
 [zaidandya.vercel.app](https://zaidandya.vercel.app)
 
-Personal portfolio upgraded from [zaidandya/zaidan-portfolio](https://github.com/zaidandya/zaidan-portfolio), featuring an ASCII accretion-disk main background, a footer-scoped ASCII goldfish canvas, a responsive Dynamic Island navigation bar, and Geist Serif typography.
+Personal Portfolio Website.
 
 ---
 
@@ -19,9 +19,9 @@ Personal portfolio upgraded from [zaidandya/zaidan-portfolio](https://github.com
 ```text
 .
 ├── public/
-│   └── assets/aistudio/
-│       ├── devault-ascii-tiles-u-g0orqyuo_d242c892.mp4   # Main ASCII background
-│       └── devault-ascii-tiles-u-pa7qt6jf_a2570146.mp4   # Footer ASCII goldfish
+│   └── assets/
+│       ├── devault-ascii-tiles-u-g0orqyuo_d242c892.mp4 
+│       └── devault-ascii-tiles-u-pa7qt6jf_a2570146.mp4 
 ├── src/
 │   ├── components/
 │   │   ├── AsciiBackground.tsx

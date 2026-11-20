@@ -1,6 +1,5 @@
 {
-  "name": "Zaidan Dhiyaurrahman — Backend Engineering",
-  "description": "Personal portfolio of Zaidan Dhiyaurrahman, 3rd-semester Information Systems and Technology student at ITB interested in backend engineering.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "name": "Zaidan Dhiyaurrahman",
+  "description": "Personal portfolio of Zaidan Dhiyaurrahman, 3rd-semester Information System and Technology student at ITB interested in backend engineering.",
+  "requestFramePermissions": []
 }

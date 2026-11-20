@@ -6,7 +6,7 @@ interface FooterProps {
   isPlaying: boolean;
 }
 
-const FOOTER_GOLDFISH_SRC = '/assets/aistudio/devault-ascii-tiles-u-pa7qt6jf_a2570146.mp4';
+const FOOTER_GOLDFISH_SRC = '/assets/devault-ascii-tiles-u-pa7qt6jf_a2570146.mp4';
 
 export function Footer({ onNavigate, isPlaying }: FooterProps) {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -20,7 +20,6 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
       const playPromise = video.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
-          // Ignore autoplay restriction errors when muted playback is blocked
         });
       }
     } else {
@@ -34,13 +33,11 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
       setCopiedEmail(true);
       window.setTimeout(() => setCopiedEmail(false), 2000);
     } catch {
-      // Clipboard API unavailable
     }
   };
 
   return (
     <footer className="relative z-10 flex min-h-[460px] flex-col justify-between overflow-hidden border-t border-[#27272A] bg-[#050505] lg:min-h-[540px]">
-      {/* Goldfish ASCII video scoped strictly to the footer */}
       <div
         className="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden"
         aria-hidden="true"
@@ -60,7 +57,6 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
 
       <div className="relative z-10 mx-auto w-full max-w-[1100px] px-6 pt-16 pb-10 sm:pt-20">
         <div className="flex justify-end">
-          {/* Top-Right 2-Column Directory */}
           <div className="grid grid-cols-2 gap-8 sm:gap-12">
             <div className="w-full max-w-[150px]">
               <h3 className="text-sm font-semibold text-zinc-50">Pages</h3>
@@ -125,7 +121,6 @@ export function Footer({ onNavigate, isPlaying }: FooterProps) {
         </div>
       </div>
 
-      {/* Bottom Baseline Row */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1100px] flex-col items-start justify-between gap-4 px-6 pb-8 pt-6 text-xs text-zinc-400 sm:flex-row sm:items-center">
         <p>© 2026 {SITE_PROFILE.name}</p>
 
